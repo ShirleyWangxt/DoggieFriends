@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  DoggieFriends
-//
-//  Created by Shirley Wang on 11/8/25.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -16,11 +9,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        
-        let viewController = ViewController()
-        viewController.view.backgroundColor = .orange
-        
-        window?.rootViewController = viewController
+
+        // DI wiring
+        let service = DogAPIService()
+        let viewModel = GameViewModel(apiService: service)
+        let gameVC = GameViewController(viewModel: viewModel)
+        let nav = UINavigationController(rootViewController: gameVC)
+        nav.navigationBar.prefersLargeTitles = true
+        gameVC.title = "DoggieFriends"
+
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 
