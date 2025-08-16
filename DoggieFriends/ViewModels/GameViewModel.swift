@@ -26,7 +26,6 @@ final class GameViewModel {
     private(set) var score: Int {
         didSet { persistScore() }
     }
-    // private(set) var totalQuestions: Int = 0
 
     // Persistence
     private let userDefaults: UserDefaults
@@ -73,7 +72,6 @@ final class GameViewModel {
         do {
             let imageURL = try await apiService.fetchRandomImageURL(for: correct)
             let question = Question(imageURL: imageURL, correctBreed: correct, options: options)
-            // totalQuestions += 1
             state = .loaded(question)
         } catch {
             state = .error("Failed to load image. Please try again.")

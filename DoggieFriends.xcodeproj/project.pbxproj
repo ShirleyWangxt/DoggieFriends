@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B98F3F91E7EBEC8AD2CE3996 /* Pods_DoggieFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A94FA2490C665437CDF1018 /* Pods_DoggieFriends.framework */; };
 		ED5FE7E62E4A1B67007E17F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E52E4A1B67007E17F6 /* AppDelegate.swift */; };
 		ED5FE7E82E4A1B67007E17F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E72E4A1B67007E17F6 /* SceneDelegate.swift */; };
 		ED5FE7EA2E4A1B67007E17F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E92E4A1B67007E17F6 /* ViewController.swift */; };
 		ED5FE7EF2E4A1B6A007E17F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5FE7EE2E4A1B6A007E17F6 /* Assets.xcassets */; };
 		ED5FE7F22E4A1B6A007E17F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5FE7F02E4A1B6A007E17F6 /* LaunchScreen.storyboard */; };
+		ED5FF0012E4A1CC8007E17F6 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF0002E4A1CC8007E17F6 /* Breed.swift */; };
+		ED5FF0062E4A1CE1007E17F6 /* DogAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF0052E4A1CE1007E17F6 /* DogAPIService.swift */; };
+		ED5FF1102E4A1E00007E17F6 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF1002E4A1DF9007E17F6 /* GameViewModel.swift */; };
+		ED5FF1112E4A1E00007E17F6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF1012E4A1DF9007E17F6 /* GameViewController.swift */; };
+		ED5FF1132E4A1E00007E17F6 /* UIImageView+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF1032E4A1DF9007E17F6 /* UIImageView+Async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FCA49728E3A9A982952B0CF /* Pods-DoggieFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieFriends.debug.xcconfig"; path = "Target Support Files/Pods-DoggieFriends/Pods-DoggieFriends.debug.xcconfig"; sourceTree = "<group>"; };
+		2876B7200D2432B41C6CD450 /* Pods-DoggieFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieFriends.release.xcconfig"; path = "Target Support Files/Pods-DoggieFriends/Pods-DoggieFriends.release.xcconfig"; sourceTree = "<group>"; };
+		4A94FA2490C665437CDF1018 /* Pods_DoggieFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoggieFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FE7E22E4A1B67007E17F6 /* DoggieFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoggieFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FE7E52E4A1B67007E17F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5FE7E72E4A1B67007E17F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +31,11 @@
 		ED5FE7EE2E4A1B6A007E17F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED5FE7F12E4A1B6A007E17F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED5FE7F32E4A1B6A007E17F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5FF0002E4A1CC8007E17F6 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		ED5FF0052E4A1CE1007E17F6 /* DogAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPIService.swift; sourceTree = "<group>"; };
+		ED5FF1002E4A1DF9007E17F6 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		ED5FF1012E4A1DF9007E17F6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		ED5FF1032E4A1DF9007E17F6 /* UIImageView+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Async.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98F3F91E7EBEC8AD2CE3996 /* Pods_DoggieFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73A3DA383AD1B8D259B24F39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FCA49728E3A9A982952B0CF /* Pods-DoggieFriends.debug.xcconfig */,
+				2876B7200D2432B41C6CD450 /* Pods-DoggieFriends.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD12E9B082CEEC5A6C7E0FF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A94FA2490C665437CDF1018 /* Pods_DoggieFriends.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED5FE7D92E4A1B67007E17F6 = {
 			isa = PBXGroup;
 			children = (
 				ED5FE7E42E4A1B67007E17F6 /* DoggieFriends */,
 				ED5FE7E32E4A1B67007E17F6 /* Products */,
+				73A3DA383AD1B8D259B24F39 /* Pods */,
+				CD12E9B082CEEC5A6C7E0FF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +91,56 @@
 				ED5FE7E52E4A1B67007E17F6 /* AppDelegate.swift */,
 				ED5FE7E72E4A1B67007E17F6 /* SceneDelegate.swift */,
 				ED5FE7E92E4A1B67007E17F6 /* ViewController.swift */,
+				ED5FF00F2E4A1D68007E17F6 /* Models */,
+				ED5FF0102E4A1D68007E17F6 /* Services */,
+				ED5FF0112E4A1D68007E17F6 /* ViewModels */,
+				ED5FF0122E4A1D68007E17F6 /* Views */,
+				ED5FF0132E4A1D68007E17F6 /* Utilities */,
 				ED5FE7EE2E4A1B6A007E17F6 /* Assets.xcassets */,
 				ED5FE7F02E4A1B6A007E17F6 /* LaunchScreen.storyboard */,
 				ED5FE7F32E4A1B6A007E17F6 /* Info.plist */,
 			);
 			path = DoggieFriends;
+			sourceTree = "<group>";
+		};
+		ED5FF00F2E4A1D68007E17F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FF0002E4A1CC8007E17F6 /* Breed.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED5FF0102E4A1D68007E17F6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FF0052E4A1CE1007E17F6 /* DogAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED5FF0112E4A1D68007E17F6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FF1002E4A1DF9007E17F6 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ED5FF0122E4A1D68007E17F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FF1012E4A1DF9007E17F6 /* GameViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED5FF0132E4A1D68007E17F6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FF1032E4A1DF9007E17F6 /* UIImageView+Async.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5FE7F62E4A1B6A007E17F6 /* Build configuration list for PBXNativeTarget "DoggieFriends" */;
 			buildPhases = (
+				6DE1A3FF8B764062AE29616E /* [CP] Check Pods Manifest.lock */,
 				ED5FE7DE2E4A1B67007E17F6 /* Sources */,
 				ED5FE7DF2E4A1B67007E17F6 /* Frameworks */,
 				ED5FE7E02E4A1B67007E17F6 /* Resources */,
@@ -129,6 +209,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6DE1A3FF8B764062AE29616E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoggieFriends-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED5FE7DE2E4A1B67007E17F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +242,11 @@
 				ED5FE7EA2E4A1B67007E17F6 /* ViewController.swift in Sources */,
 				ED5FE7E62E4A1B67007E17F6 /* AppDelegate.swift in Sources */,
 				ED5FE7E82E4A1B67007E17F6 /* SceneDelegate.swift in Sources */,
+				ED5FF0012E4A1CC8007E17F6 /* Breed.swift in Sources */,
+				ED5FF0062E4A1CE1007E17F6 /* DogAPIService.swift in Sources */,
+				ED5FF1102E4A1E00007E17F6 /* GameViewModel.swift in Sources */,
+				ED5FF1112E4A1E00007E17F6 /* GameViewController.swift in Sources */,
+				ED5FF1132E4A1E00007E17F6 /* UIImageView+Async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +385,7 @@
 		};
 		ED5FE7F72E4A1B6A007E17F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FCA49728E3A9A982952B0CF /* Pods-DoggieFriends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +414,7 @@
 		};
 		ED5FE7F82E4A1B6A007E17F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2876B7200D2432B41C6CD450 /* Pods-DoggieFriends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

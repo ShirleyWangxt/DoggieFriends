@@ -11,7 +11,10 @@ final class DogAPIService: DogAPIServiceProtocol {
     private let urlSession: URLSession
 
     init(urlSession: URLSession = .shared) {
-        self.urlSession = urlSession
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 10.0
+        config.timeoutIntervalForResource = 15.0
+        self.urlSession = URLSession(configuration: config)
     }
 
     func fetchAllBreeds() async throws -> [Breed] {
