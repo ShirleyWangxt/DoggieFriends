@@ -26,6 +26,10 @@ final class GameViewModel {
     private(set) var score: Int {
         didSet { persistScore() }
     }
+    
+    // Retry logic
+    private var currentQuestionAttempts: Int = 0
+    private var hasShownCorrectAnswer: Bool = false
 
     // Persistence
     private let userDefaults: UserDefaults
@@ -55,6 +59,10 @@ final class GameViewModel {
             return 
         }
         state = .loading
+        
+        // Reset retry state for new question
+        currentQuestionAttempts = 0
+        hasShownCorrectAnswer = false
 
         // Select correct breed
         guard let correct = allBreeds.randomElement() else {
@@ -78,13 +86,31 @@ final class GameViewModel {
         }
     }
 
-    func selectAnswer(_ breed: Breed) -> Bool {
-        guard case let .loaded(question) = state else { return false }
+    func selectAnswer(_ breed: Breed) -> AnswerResult {
+        guard case let .loaded(question) = state else { return .invalid }
+        
         let isCorrect = breed == question.correctBreed
+        
         if isCorrect {
             score += 1
+            return .correct
+        } else {
+            currentQuestionAttempts += 1
+            
+            if currentQuestionAttempts == 1 {
+                // First wrong attempt - allow retry
+                return .incorrectRetryAllowed
+            } else {
+                // Second wrong attempt - show correct answer
+                hasShownCorrectAnswer = true
+                return .incorrectFinal(question.correctBreed)
+            }
         }
-        return isCorrect
+    }
+    
+    // Check if we should proceed to next question
+    func shouldProceedToNextQuestion() -> Bool {
+        return hasShownCorrectAnswer
     }
 
     func resetScore() {
@@ -94,6 +120,14 @@ final class GameViewModel {
     private func persistScore() {
         userDefaults.set(score, forKey: scoreKey)
     }
+}
+
+// Answer result enum
+enum AnswerResult {
+    case correct
+    case incorrectRetryAllowed
+    case incorrectFinal(Breed) // Shows correct breed
+    case invalid
 }
 
 

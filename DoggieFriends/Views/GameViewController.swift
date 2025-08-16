@@ -105,33 +105,77 @@ final class GameViewController: UIViewController {
         let index = sender.tag
         guard index < question.options.count else { return }
         let selected = question.options[index]
-        let isCorrect = viewModel.selectAnswer(selected)
+        let answerResult = viewModel.selectAnswer(selected)
 
-        // Feedback UI
-        let text = isCorrect ? "Correct!" : "Try again!"
-        feedbackLabel.text = text
-        feedbackLabel.textColor = isCorrect ? .systemGreen : .systemRed
-        UIView.animate(withDuration: 0.2, animations: {
-            self.feedbackLabel.alpha = 1
-            self.feedbackLabel.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.2) {
-                self.feedbackLabel.alpha = 0
-                self.feedbackLabel.transform = .identity
-            }
-        })
-
-        updateScore()
-
-        // When correct, disable taps and load next after delay
-        if isCorrect {
+        switch answerResult {
+        case .correct:
+            // Correct answer - show success feedback
+            showFeedback("Correct!", color: .systemGreen)
+            updateScore()
+            
+            // Disable all buttons and proceed to next question after delay
             optionButtons.forEach { $0.isEnabled = false }
             Task {
-                // try? await Task.sleep(nanoseconds: 900_000_000)
+                try? await Task.sleep(nanoseconds: 900_000_000)
                 await self.viewModel.loadNextQuestion()
                 await self.refreshUI()
             }
+            
+        case .incorrectRetryAllowed:
+            // First wrong attempt - show feedback and allow retry
+            showFeedback("Try again!", color: .systemOrange)
+            updateScore()
+            
+        case .incorrectFinal(let correctBreed):
+            // Second wrong attempt - show correct answer and proceed
+            // Highlight the correct answer
+            highlightCorrectAnswer(correctBreed, in: question.options)
+            
+            // Disable all buttons and proceed to next question after delay
+            optionButtons.forEach { $0.isEnabled = false }
+            Task {
+                try? await Task.sleep(nanoseconds: 2000_000_000) // 2 seconds to show correct answer
+                await self.viewModel.loadNextQuestion()
+                await self.refreshUI()
+            }
+            
+        case .invalid:
+            // Invalid state - do nothing
+            break
         }
+    }
+    
+    private func showFeedback(_ message: String, color: UIColor) {
+        feedbackLabel.text = message
+        feedbackLabel.textColor = color
+        feedbackLabel.numberOfLines = 0
+        feedbackLabel.lineBreakMode = .byWordWrapping
+        feedbackLabel.textAlignment = .center
+        feedbackLabel.alpha = 1
+    }
+    
+    private func highlightCorrectAnswer(_ correctBreed: Breed, in options: [Breed]) {
+        // Find and highlight the correct answer button
+        for (index, option) in options.enumerated() {
+            if option == correctBreed {
+                let button = optionButtons[index]
+                button.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.3)
+                button.setTitle("\(option.displayName) ✓", for: .normal)
+                button.setTitleColor(.systemGreen, for: .normal)
+                break
+            }
+        }
+        
+        // Show a friendly message about the correct answer
+        let message = "Awwww it was: \(correctBreed.displayName)"
+        feedbackLabel.text = message
+        feedbackLabel.textColor = .systemGreen
+        feedbackLabel.numberOfLines = 0
+        feedbackLabel.lineBreakMode = .byWordWrapping
+        feedbackLabel.textAlignment = .center
+        feedbackLabel.alpha = 1
+        
+        // This message will stay visible until the next question loads
     }
 
     @objc private func retryTapped() {
@@ -152,6 +196,9 @@ final class GameViewController: UIViewController {
             retryButton.isHidden = true
             imageView.image = nil
             optionButtons.forEach { $0.setTitle("…", for: .normal); $0.isEnabled = false }
+            // Clear feedback label when loading new question
+            feedbackLabel.text = ""
+            feedbackLabel.alpha = 0
         case .error:
             activityIndicator.stopAnimating()
             retryButton.isHidden = false
@@ -160,10 +207,16 @@ final class GameViewController: UIViewController {
             activityIndicator.stopAnimating()
             retryButton.isHidden = true
             await imageView.setImage(from: question.imageURL)
+            // Clear feedback label for new question
+            feedbackLabel.text = ""
+            feedbackLabel.alpha = 0
             for (idx, option) in question.options.enumerated() {
                 if idx < optionButtons.count {
-                    optionButtons[idx].setTitle(option.displayName, for: .normal)
+                    optionButtons[idx].setTitle(question.options[idx].displayName, for: .normal)
                     optionButtons[idx].isEnabled = true
+                    // Reset button appearance for new question
+                    optionButtons[idx].backgroundColor = UIColor.secondarySystemBackground
+                    optionButtons[idx].setTitleColor(.label, for: .normal)
                 }
             }
         }
