@@ -54,7 +54,7 @@ final class GameViewController: UIViewController {
         }
 
         feedbackLabel.alpha = 0
-        feedbackLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        feedbackLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         feedbackLabel.textAlignment = .center
 
         scoreLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -64,6 +64,14 @@ final class GameViewController: UIViewController {
         retryButton.setTitle("Retry", for: .normal)
         retryButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
         retryButton.tintColor = view.tintColor
+        retryButton.backgroundColor = UIColor.white
+        retryButton.layer.cornerRadius = 12
+        retryButton.layer.shadowColor = UIColor.black.cgColor
+        retryButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        retryButton.layer.shadowRadius = 4
+        retryButton.layer.shadowOpacity = 0.3
+        retryButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
+        retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         retryButton.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
         retryButton.isHidden = true
 
