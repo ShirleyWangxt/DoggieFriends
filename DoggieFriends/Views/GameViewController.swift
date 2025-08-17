@@ -167,7 +167,7 @@ final class GameViewController: UIViewController {
         }
         
         // Show a friendly message about the correct answer
-        let message = "Awwww it was: \(correctBreed.displayName)"
+        let message = "Awwww it is: \(correctBreed.displayName)"
         feedbackLabel.text = message
         feedbackLabel.textColor = .systemGreen
         feedbackLabel.numberOfLines = 0
