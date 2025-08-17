@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B98F3F91E7EBEC8AD2CE3996 /* Pods_DoggieFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A94FA2490C665437CDF1018 /* Pods_DoggieFriends.framework */; };
+		ED42EC2E2E51AF7200F9A66E /* TestRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED42EC232E51AF2000F9A66E /* TestRunner.swift */; };
+		ED42EC2F2E51AF7200F9A66E /* DoggieFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED42EC282E51AF2000F9A66E /* DoggieFriendsTests.swift */; };
 		ED5FE7E62E4A1B67007E17F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E52E4A1B67007E17F6 /* AppDelegate.swift */; };
 		ED5FE7E82E4A1B67007E17F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E72E4A1B67007E17F6 /* SceneDelegate.swift */; };
 		ED5FE7EA2E4A1B67007E17F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FE7E92E4A1B67007E17F6 /* ViewController.swift */; };
@@ -20,10 +22,26 @@
 		ED5FF1132E4A1E00007E17F6 /* UIImageView+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FF1032E4A1DF9007E17F6 /* UIImageView+Async.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ED42EC1E2E51AED100F9A66E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED5FE7DA2E4A1B67007E17F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED5FE7E12E4A1B67007E17F6;
+			remoteInfo = DoggieFriends;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0FCA49728E3A9A982952B0CF /* Pods-DoggieFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieFriends.debug.xcconfig"; path = "Target Support Files/Pods-DoggieFriends/Pods-DoggieFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		2876B7200D2432B41C6CD450 /* Pods-DoggieFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieFriends.release.xcconfig"; path = "Target Support Files/Pods-DoggieFriends/Pods-DoggieFriends.release.xcconfig"; sourceTree = "<group>"; };
 		4A94FA2490C665437CDF1018 /* Pods_DoggieFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoggieFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED42EC1A2E51AED100F9A66E /* DoggieFriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggieFriendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED42EC232E51AF2000F9A66E /* TestRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunner.swift; sourceTree = "<group>"; };
+		ED42EC252E51AF2000F9A66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED42EC262E51AF2000F9A66E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ED42EC272E51AF2000F9A66E /* TestScheme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TestScheme.md; sourceTree = "<group>"; };
+		ED42EC282E51AF2000F9A66E /* DoggieFriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggieFriendsTests.swift; sourceTree = "<group>"; };
 		ED5FE7E22E4A1B67007E17F6 /* DoggieFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoggieFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FE7E52E4A1B67007E17F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5FE7E72E4A1B67007E17F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,9 +54,17 @@
 		ED5FF1002E4A1DF9007E17F6 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		ED5FF1012E4A1DF9007E17F6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		ED5FF1032E4A1DF9007E17F6 /* UIImageView+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Async.swift"; sourceTree = "<group>"; };
+		ED5FF1042E4A1E00007E17F6 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED42EC172E51AED100F9A66E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED5FE7DF2E4A1B67007E17F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,10 +93,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED42EC1B2E51AED100F9A66E /* DoggieFriendsTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED42EC252E51AF2000F9A66E /* Info.plist */,
+				ED42EC262E51AF2000F9A66E /* README.md */,
+				ED42EC282E51AF2000F9A66E /* DoggieFriendsTests.swift */,
+				ED42EC232E51AF2000F9A66E /* TestRunner.swift */,
+				ED42EC272E51AF2000F9A66E /* TestScheme.md */,
+			);
+			path = DoggieFriendsTests;
+			sourceTree = "<group>";
+		};
 		ED5FE7D92E4A1B67007E17F6 = {
 			isa = PBXGroup;
 			children = (
 				ED5FE7E42E4A1B67007E17F6 /* DoggieFriends */,
+				ED42EC1B2E51AED100F9A66E /* DoggieFriendsTests */,
 				ED5FE7E32E4A1B67007E17F6 /* Products */,
 				73A3DA383AD1B8D259B24F39 /* Pods */,
 				CD12E9B082CEEC5A6C7E0FF8 /* Frameworks */,
@@ -81,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5FE7E22E4A1B67007E17F6 /* DoggieFriends.app */,
+				ED42EC1A2E51AED100F9A66E /* DoggieFriendsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5FF0052E4A1CE1007E17F6 /* DogAPIService.swift */,
+				ED5FF1042E4A1E00007E17F6 /* URLSessionProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,6 +187,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ED42EC192E51AED100F9A66E /* DoggieFriendsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED42EC202E51AED100F9A66E /* Build configuration list for PBXNativeTarget "DoggieFriendsTests" */;
+			buildPhases = (
+				ED42EC162E51AED100F9A66E /* Sources */,
+				ED42EC172E51AED100F9A66E /* Frameworks */,
+				ED42EC182E51AED100F9A66E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED42EC1F2E51AED100F9A66E /* PBXTargetDependency */,
+			);
+			name = DoggieFriendsTests;
+			productName = DoggieFriendsTests;
+			productReference = ED42EC1A2E51AED100F9A66E /* DoggieFriendsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ED5FE7E12E4A1B67007E17F6 /* DoggieFriends */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5FE7F62E4A1B6A007E17F6 /* Build configuration list for PBXNativeTarget "DoggieFriends" */;
@@ -174,6 +233,10 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					ED42EC192E51AED100F9A66E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = ED5FE7E12E4A1B67007E17F6;
+					};
 					ED5FE7E12E4A1B67007E17F6 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -193,11 +256,19 @@
 			projectRoot = "";
 			targets = (
 				ED5FE7E12E4A1B67007E17F6 /* DoggieFriends */,
+				ED42EC192E51AED100F9A66E /* DoggieFriendsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ED42EC182E51AED100F9A66E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED5FE7E02E4A1B67007E17F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +306,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED42EC162E51AED100F9A66E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED42EC2F2E51AF7200F9A66E /* DoggieFriendsTests.swift in Sources */,
+				ED42EC2E2E51AF7200F9A66E /* TestRunner.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED5FE7DE2E4A1B67007E17F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +332,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ED42EC1F2E51AED100F9A66E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED5FE7E12E4A1B67007E17F6 /* DoggieFriends */;
+			targetProxy = ED42EC1E2E51AED100F9A66E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ED5FE7F02E4A1B6A007E17F6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -264,6 +352,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ED42EC212E51AED100F9A66E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ7J92H7A3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangxueting.DoggieFriendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoggieFriends.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoggieFriends";
+			};
+			name = Debug;
+		};
+		ED42EC222E51AED100F9A66E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ7J92H7A3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangxueting.DoggieFriendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoggieFriends.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoggieFriends";
+			};
+			name = Release;
+		};
 		ED5FE7F42E4A1B6A007E17F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -444,6 +568,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED42EC202E51AED100F9A66E /* Build configuration list for PBXNativeTarget "DoggieFriendsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED42EC212E51AED100F9A66E /* Debug */,
+				ED42EC222E51AED100F9A66E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED5FE7DD2E4A1B67007E17F6 /* Build configuration list for PBXProject "DoggieFriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

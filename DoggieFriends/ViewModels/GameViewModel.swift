@@ -3,14 +3,14 @@ import Foundation
 @MainActor
 final class GameViewModel {
     // Data model
-    struct Question {
+    struct Question: Equatable {
         let imageURL: URL
         let correctBreed: Breed
         let options: [Breed]
     }
 
     // UI state
-    enum State {
+    enum State: Equatable {
         case idle
         case loading
         case loaded(Question)
@@ -123,7 +123,7 @@ final class GameViewModel {
 }
 
 // Answer result enum
-enum AnswerResult {
+enum AnswerResult: Equatable {
     case correct
     case incorrectRetryAllowed
     case incorrectFinal(Breed) // Shows correct breed

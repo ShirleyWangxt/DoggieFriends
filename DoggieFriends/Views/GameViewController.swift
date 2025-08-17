@@ -5,13 +5,13 @@ final class GameViewController: UIViewController {
     private let viewModel: GameViewModel
 
     // UI
-    private let imageView = UIImageView()
-    private let stackView = UIStackView()
-    private var optionButtons: [UIButton] = []
-    private let feedbackLabel = UILabel()
-    private let scoreLabel = UILabel()
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
-    private let retryButton = UIButton(type: .system)
+    let imageView = UIImageView()
+    let stackView = UIStackView()
+    var optionButtons: [UIButton] = []
+    let feedbackLabel = UILabel()
+    let scoreLabel = UILabel()
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    let retryButton = UIButton(type: .system)
 
     init(viewModel: GameViewModel) {
         self.viewModel = viewModel
