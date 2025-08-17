@@ -24,7 +24,11 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
         configureUI()
-        Task { await viewModel.loadBreedsIfNeeded(); await refreshUI() }
+        Task {
+            await refreshUI()
+            await viewModel.loadBreedsIfNeeded()
+            await refreshUI()
+        }
     }
 
     private func configureUI() {
@@ -196,15 +200,11 @@ final class GameViewController: UIViewController {
 
     private func refreshUI() async {
         switch viewModel.state {
-        case .idle:
-            activityIndicator.stopAnimating()
-            retryButton.isHidden = true
-        case .loading:
+        case .idle, .loading:
             activityIndicator.startAnimating()
             retryButton.isHidden = true
             imageView.image = nil
             optionButtons.forEach { $0.setTitle("…", for: .normal); $0.isEnabled = false }
-            // Clear feedback label when loading new question
             feedbackLabel.text = ""
             feedbackLabel.alpha = 0
         case .error:
@@ -215,7 +215,6 @@ final class GameViewController: UIViewController {
             activityIndicator.stopAnimating()
             retryButton.isHidden = true
             await imageView.setImage(from: question.imageURL)
-            // Clear feedback label for new question
             feedbackLabel.text = ""
             feedbackLabel.alpha = 0
             for (idx, option) in question.options.enumerated() {
